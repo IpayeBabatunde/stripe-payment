@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class StripePaymentApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(StripePaymentApplication.class, args);
     }
 
