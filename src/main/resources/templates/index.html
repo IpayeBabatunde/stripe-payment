@@ -11,14 +11,31 @@
         body {
             background-color: #f8f9fa;
         }
+        .container {
+            max-height: 90vh; /* Adjust to fit most of the viewport */
+
+        }
 
         .product-card {
-            max-width: 300px;
-            margin: auto;
+            width: 200px;
+            height: 300px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column; /* Ensure content stacks properly */
+            justify-content: space-between; /* Distribute content evenly */
             border: none;
             border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card img {
+            height: 150px; /* Adjust the height of images */
+            object-fit: cover; /* Ensures the image fits nicely without distortion */
+        }
+
+        .product-card .card-body {
+            padding: 5px; /* Reduce padding */
+            font-size: 0.9em; /* Slightly reduce text size */
         }
 
         .product-card:hover {
@@ -44,8 +61,10 @@
 
         .quantity-controls {
             display: flex;
+            flex-direction: row;
             align-items: center;
             justify-content: center;
+            flex-wrap: nowrap;
             gap: 10px;
         }
 
@@ -63,71 +82,70 @@
             border: none;
             background: #f8f9fa;
         }
+
+        .checkout-button {
+            font-size: 0.9em; /* Reduce font size */
+            padding: 5px 10px; /* Adjust padding for a smaller button */
+            height: auto; /* Ensure the height adjusts properly */
+        }
     </style>
 </head>
 <body>
 
 <div class="container mt-5">
     <h1 class="text-center mb-4">Explore Our Products</h1>
-    <div class="row justify-content-center">
+    <div class="d-flex justify-content-center gap-3">
         <!-- Product 1 -->
-        <div class="col-md-4 mb-4">
-            <div class="card product-card" data-name="Smartphone" data-price="15000" data-image="/images/smartphone.jpg">
-                <img src="/images/smartphone.jpg" class="card-img-top product-image" alt="Smartphone">
-                <div class="card-body text-center">
-                    <h5 class="product-title">Smartphone</h5>
-                    <p class="product-price">Price: $150.00</p>
-                    <div class="quantity-controls my-3">
-                        <button class="btn btn-outline-secondary decrement">-</button>
-                        <input type="text" class="quantity-display form-control" value="1" readonly>
-                        <button class="btn btn-outline-secondary increment">+</button>
-                    </div>
-                    <button class="btn btn-primary btn-lg w-100 checkout-button">Checkout</button>
+        <div class="card product-card" data-name="Smartphone" data-price="15000" data-image="/images/smartphone.jpg">
+            <img src="/images/smartphone.jpg" class="card-img-top product-image" alt="Smartphone">
+            <div class="card-body text-center">
+                <h5 class="product-title">Smartphone</h5>
+                <p class="product-price">Price: $150.00</p>
+                <div class="quantity-controls my-3">
+                    <button class="btn btn-outline-secondary decrement">-</button>
+                    <input type="text" class="quantity-display form-control" value="1" readonly>
+                    <button class="btn btn-outline-secondary increment">+</button>
                 </div>
+                <button class="btn btn-primary btn-lg w-100 checkout-button">Checkout</button>
             </div>
         </div>
 
         <!-- Product 2 -->
-        <div class="col-md-4 mb-4">
-            <div class="card product-card" data-name="Headphones" data-price="5000" data-image="/images/headphones.jpg">
-                <img src="/images/headphones.jpg" class="card-img-top product-image" alt="Headphones">
-                <div class="card-body text-center">
-                    <h5 class="product-title">Headphones</h5>
-                    <p class="product-price">Price: $50.00</p>
-                    <div class="quantity-controls my-3">
-                        <button class="btn btn-outline-secondary decrement">-</button>
-                        <input type="text" class="quantity-display form-control" value="1" readonly>
-                        <button class="btn btn-outline-secondary increment">+</button>
-                    </div>
-                    <button class="btn btn-primary btn-lg w-100 checkout-button">Checkout</button>
+        <div class="card product-card" data-name="Headphones" data-price="5000" data-image="/images/headphones.jpg">
+            <img src="/images/headphones.jpg" class="card-img-top product-image" alt="Headphones">
+            <div class="card-body text-center">
+                <h5 class="product-title">Headphones</h5>
+                <p class="product-price">Price: $50.00</p>
+                <div class="quantity-controls my-3">
+                    <button class="btn btn-outline-secondary decrement">-</button>
+                    <input type="text" class="quantity-display form-control" value="1" readonly>
+                    <button class="btn btn-outline-secondary increment">+</button>
                 </div>
+                <button class="btn btn-primary btn-lg w-100 checkout-button">Checkout</button>
             </div>
         </div>
 
         <!-- Product 3 -->
-        <div class="col-md-4 mb-4">
-            <div class="card product-card" data-name="Laptop" data-price="75000" data-image="/images/laptop.jpg">
-                <img src="/images/laptop.jpg" class="card-img-top product-image" alt="Laptop">
-                <div class="card-body text-center">
-                    <h5 class="product-title">Laptop</h5>
-                    <p class="product-price">Price: $750.00</p>
-                    <div class="quantity-controls my-3">
-                        <button class="btn btn-outline-secondary decrement">-</button>
-                        <input type="text" class="quantity-display form-control" value="1" readonly>
-                        <button class="btn btn-outline-secondary increment">+</button>
-                    </div>
-                    <button class="btn btn-primary btn-lg w-100 checkout-button">Checkout</button>
+        <div class="card product-card" data-name="Laptop" data-price="75000" data-image="/images/laptop.jpg">
+            <img src="/images/laptop.jpg" class="card-img-top product-image" alt="Laptop">
+            <div class="card-body text-center">
+                <h5 class="product-title">Laptop</h5>
+                <p class="product-price">Price: $750.00</p>
+                <div class="quantity-controls my-3">
+                    <button class="btn btn-outline-secondary decrement">-</button>
+                    <input type="text" class="quantity-display form-control" value="1" readonly>
+                    <button class="btn btn-outline-secondary increment">+</button>
                 </div>
+                <button class="btn btn-primary btn-lg w-100 checkout-button">Checkout</button>
             </div>
         </div>
     </div>
 </div>
-
 <!-- Bootstrap JS Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    const stripe = Stripe("PROVIDE YOUR KEY");
+    const stripe = Stripe("pk_test_51QdcUJ2U2OTdRmbJi004ze7wv2dq7zDKDwaxYRVnCxWYeDSHGpYnbmGYKotp6s7r5Gq9TpVCTKBukTviVfmAvoUa00jIeqv07M");
 
     document.querySelectorAll(".product-card").forEach(card => {
         const decrementBtn = card.querySelector(".decrement");
